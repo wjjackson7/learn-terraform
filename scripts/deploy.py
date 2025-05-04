@@ -60,7 +60,7 @@ def connect_to_instance():
     os.system(ssh_cmd)
 
 def destroy_infra():
-    run_cmd("terraform destroy -auto-approve", cwd=INFRA_DIR)
+    run_cmd("terraform destroy", cwd=INFRA_DIR)
 
 def stop_instance():
     run_cmd("terraform apply -auto-approve -var='instance_state=stopped'", cwd=INFRA_DIR)
