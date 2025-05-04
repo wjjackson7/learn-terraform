@@ -226,3 +226,5 @@ infra/.terraform/
 infra/*.tfstate
 infra/*.tfstate.*
 infra/*.lock.info
+.terraform.lock.hcl
+infra/.terraform.lock.hcl

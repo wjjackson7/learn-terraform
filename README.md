@@ -86,7 +86,7 @@ ssh -i terraform.pem ubuntu@<public-ip>
 ```
 
 # Then on the instance:
-cat /var/log/cloud-init-output.log
+vi /var/log/cloud-init-output.log
 
 ---
 

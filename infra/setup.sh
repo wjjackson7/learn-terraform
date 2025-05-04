@@ -22,7 +22,7 @@ sudo python3.9 -m venv venv
 source venv/bin/activate
 
 # Install dependencies
-sudo pip install -r app/requirements.txt
+pip install -r app/requirements.txt
 
 # Start the app (adjust app:app to your actual entry point)
-python3 api.py &
+python3 /opt/app/app/api.py &
