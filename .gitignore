@@ -223,6 +223,6 @@ credentials/
 
 # Ignore Terraform local state, backups, and provider binaries
 infra/.terraform/
-infra/.terraform.lock.hcl
-infra/terraform.tfstate
-infra/terraform.tfstate.backup
+infra/*.tfstate
+infra/*.tfstate.*
+infra/*.lock.info

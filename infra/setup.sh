@@ -14,15 +14,15 @@ apt install -y python3.9 python3.9-venv python3.9-distutils curl git
 curl -sS https://bootstrap.pypa.io/get-pip.py | python3.9
 
 # Clone and set up your app
-git clone https://github.com/wjjackson7/learn-terraform.git /opt/app
+sudo git clone https://github.com/wjjackson7/learn-terraform.git /opt/app
 cd /opt/app
 
 # Optional: use virtual environment
-python3.9 -m venv venv
+sudo python3.9 -m venv venv
 source venv/bin/activate
 
 # Install dependencies
-pip install -r requirements.txt
+sudo pip install -r app/requirements.txt
 
 # Start the app (adjust app:app to your actual entry point)
-gunicorn --bind 0.0.0.0:80 app:app &
+python3 api.py &
