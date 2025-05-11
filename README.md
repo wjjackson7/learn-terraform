@@ -82,12 +82,17 @@ terraform destroy -auto-approve
 If your app isn't running as expected, SSH into your instance and check the cloud-init logs:
 
 ```bash
-ssh -i terraform.pem ubuntu@<public-ip>
+ssh -i credentials/terraform.pem ubuntu@<public-ip>
 ```
 
 # Then on the instance:
-vi /var/log/cloud-init-output.log
+sudo cat /var/log/cloud-init-output.log
+sudo cat /var/lib/cloud/instance/scripts/part-001
 
+or
+
+sudo vi /var/log/cloud-init-output.log
+sudo vi /var/lib/cloud/instance/scripts/part-001
 ---
 
 ## 🧠 Notes

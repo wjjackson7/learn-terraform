@@ -1,0 +1,7 @@
+{
+    "aws_region": "us-west-2",
+    "app_repo": "https://github.com/wjjackson7/learn-terraform.git",
+    "app_path": "/opt/app",
+    "key_pair": "terraform",
+    "instance_state": "running"
+} 
