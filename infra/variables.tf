@@ -19,7 +19,7 @@ variable "aws_region" {
 variable "app_repo" {
   description = "Git repository URL for the application"
   type        = string
-  default     = "https://github.com/wjjackson7/learn-terraform.git"
+  default     = "https://github.com/YizhiZhao/saikat_qa_bank.git"
 }
 
 variable "app_path" {

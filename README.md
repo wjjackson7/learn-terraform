@@ -93,6 +93,9 @@ or
 
 sudo vi /var/log/cloud-init-output.log
 sudo vi /var/lib/cloud/instance/scripts/part-001
+
+to restart the python process on the ec2
+sudo /opt/app/venv/bin/python /opt/app/app/api.py
 ---
 
 ## 🧠 Notes

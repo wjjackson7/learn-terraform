@@ -10,7 +10,7 @@ from caption_analyzer import analyze_caption
 from main import get_google_drive_service, download_file_to_local, extract_file_id_from_link
 
 # Load environment variables
-load_dotenv()
+load_dotenv("/opt/app/credentials/.env")
 
 # Initialize FastAPI app
 app = FastAPI(

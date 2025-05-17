@@ -149,6 +149,13 @@ def deploy_terraform():
         sys.exit(1)
 
     ip = result.stdout.strip()
+    try:
+        print(f"🔄 Copying credentials to instance at {ip}...")
+        cmd = f"scp -i ~/git/learn-terraform/credentials/terraform.pem -r ~/git/learn-terraform/credentials ubuntu@{ip}:~"
+        run_cmd(cmd)
+    except:
+        print("❌ Failed to copy credentials to instance.")
+
     print(f"✅ Instance public IP: {ip}")
 
 def connect_to_instance():

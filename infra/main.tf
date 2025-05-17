@@ -128,6 +128,35 @@ resource "aws_instance" "app" {
   tags = {
     Name = "PythonApp"
   }
+
+  # 🔽 Copy the local credentials folder to EC2
+  provisioner "file" {
+    source      = "${path.module}/../credentials"
+    destination = "/home/ubuntu/credentials"
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("${path.module}/../credentials/terraform.pem")
+      host        = self.public_ip
+    }
+  }
+
+  # 🔽 Move it to /opt/app and ensure permissions
+  provisioner "remote-exec" {
+    inline = [
+      "sudo mv /home/ubuntu/credentials /opt/app/",
+      "sudo chown -R ubuntu:ubuntu /opt/app/credentials"
+    ]
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("${path.module}/../credentials/terraform.pem")
+      host        = self.public_ip
+    }
+  }
+
 }
 
 # state to track if my ec2 instance is running
