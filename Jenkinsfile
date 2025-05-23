@@ -1,9 +1,19 @@
 pipeline {
     agent any
+
+    //have to run job once manually before cron kicks in
+    triggers {
+        cron 'H 0 * * *'
+    }
+
     environment {
         //would have to configure these in jenkins credential section
-        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+        //AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+        //AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+    }
+    //only keeps last 3 builds
+    options {
+        preserveStashes(buildCount: 3)
     }
     stages {
         stage('Build') {
