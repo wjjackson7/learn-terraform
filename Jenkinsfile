@@ -7,6 +7,7 @@ pipeline {
     }
 
     environment {
+        test_env = "TEST_VALUE"
         //would have to configure these in jenkins credential section
         //AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
         //AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
