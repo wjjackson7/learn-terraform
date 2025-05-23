@@ -20,11 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 //can use snippet generator to make one giant withCredentials method , must be set for every stage
-                withCredentials(bindings: [certificate(credentialsId: 'jenkins-certificate-for-xyz', \
-                                                       keystoreVariable: 'CERTIFICATE_FOR_XYZ', \
-                                                       passwordVariable: 'XYZ-CERTIFICATE-PASSWORD')]) {
-                  //
-                }
+                //withCredentials
                 echo 'Building..'
             }
         }
