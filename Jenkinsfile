@@ -32,6 +32,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                echo 'testing webhook'
             }
         }
     }
